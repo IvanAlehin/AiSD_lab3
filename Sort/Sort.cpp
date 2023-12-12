@@ -63,9 +63,9 @@ stats& ShellSort(vector<T>& vec) {
 	stats sort_stats;
 	for (int i(int(vec.size())/2); i > 0; i /= 2) {
 		for (int j(i); j < (vec.size()); ++j) {
-			for (int k(j); (k >= 0) && (vec[k-j] > vec[k]); k -= i) {
+			for (int k(j); (k >= i) && (vec[k-i] > vec[j]); k -= i) {
 				sort_stats.comparison_count += 1;
-				Swap(vec[k-j], vec[k]);
+				Swap(vec[k-i], vec[k]);
 				sort_stats.copy_count += 3;
 			}
 		}
