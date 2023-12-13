@@ -8,7 +8,7 @@ int main() {
 
     const int num_vec = 100;
     const vector<size_t> vec_lengths = { 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 25000, 50000, 100000 };
-
+    
     for (size_t len : vec_lengths) {
 
         stats bubble_random_stat{ 0, 0 };
@@ -153,6 +153,104 @@ int main() {
         cout << endl;
         cout << endl;
     }
+
+
+
+    vector<string> v1s = { "q", "w", "e" , "e", "d", "g" , "x", "z", "h", "n", "k", "t", "a", "t", "l" , "u", "j", "f" };
+    vector<string> v2s = { "q", "w", "e" , "e", "d", "g" , "x", "z", "h", "n", "k", "t", "a", "t", "l" , "u", "j", "f" };
+    vector<string> v3s = { "q", "w", "e" , "e", "d", "g" , "x", "z", "h", "n", "k", "t", "a", "t", "l" , "u", "j", "f" };
+
+    cout << "Vector Before Sorting: " << endl;
+    PrintVec(v1s);
+    stats statistics1 = BubbleSort(v1s);
+    cout << "Vector After Bubble Sorting: " << endl;
+    PrintVec(v1s);
+    cout << "Bubble Sorting Comparison Count: " << statistics1.comparison_count << endl;
+    cout << "Bubble Sorting Copy Count: " << statistics1.copy_count << endl << endl;
+
+    cout << "Vector Before Sorting: " << endl;
+    PrintVec(v2s);
+    stats statistics2 = ShellSort(v2s);
+    cout << "Vector After Shell Sorting: " << endl;
+    PrintVec(v1s);
+    cout << "Shell Sorting Comparison Count: " << statistics2.comparison_count << endl;
+    cout << "Shell Sorting Copy Count: " << statistics2.copy_count << endl << endl;
+
+    cout << "Vector Before Sorting: " << endl;
+    PrintVec(v3s);
+    stats statistics3 = HeapSort(v3s);
+    cout << "Vector After Heap Sorting: " << endl;
+    PrintVec(v3s);
+    cout << "Heap Sorting Comparison Count: " << statistics3.comparison_count << endl;
+    cout << "Heap Sorting Copy Count: " << statistics3.copy_count << endl << endl;
+
+
+
+
+    vector<MyClass> v1;
+    vector<MyClass> v2;
+    vector<MyClass> v3;
+
+    srand(static_cast<unsigned int>(time(0)));
+    for (size_t i = 0; i < 50; ++i) {
+        v1.push_back(rand() % 100);
+    }
+
+    srand(static_cast<unsigned int>(time(0)));
+    for (size_t i = 0; i < 50; ++i) {
+        v2.push_back(rand() % 100);
+    }
+
+    srand(static_cast<unsigned int>(time(0)));
+    for (size_t i = 0; i < 50; ++i) {
+        v3.push_back(rand() % 100);
+    }
+
+
+    cout << "Vector Before Sorting: " << endl;
+    for (const auto& obj : v1) {
+        cout << obj.get_value() << " ";
+    }
+
+    stats statistics4 = BubbleSort(v1);
+    cout << endl;
+    cout << "Vector After Bubble Sorting: " << endl;
+    for (const auto& obj : v1) {
+        cout << obj.get_value() << " ";
+    }
+    cout << "Bubble Sorting Comparison Count: " << statistics4.comparison_count << endl;
+    cout << "Bubble Sorting Copy Count: " << statistics4.copy_count << endl << endl;
+
+
+    cout << "Vector Before Sorting: " << endl;
+    for (const auto& obj : v2) {
+        cout << obj.get_value() << " ";
+    }
+
+    stats statistics5 = ShellSort(v2);
+    cout << endl;
+    cout << "Vector After Shell Sorting: " << endl;
+    for (const auto& obj : v2) {
+        cout << obj.get_value() << " ";
+    }
+    cout << "Shell Sorting Comparison Count: " << statistics5.comparison_count << endl;
+    cout << "Shell Sorting Copy Count: " << statistics5.copy_count << endl << endl;
+
+
+    cout << "Vector Before Sorting: " << endl;
+    for (const auto& obj : v3) {
+        cout << obj.get_value() << " ";
+    }
+
+    stats statistics6 = HeapSort(v3);
+    cout << endl;
+    cout << "Vector After Heap Sorting: " << endl;
+    for (const auto& obj : v3) {
+        cout << obj.get_value() << " ";
+    }
+    cout << "Heap Sorting Comparison Count: " << statistics6.comparison_count << endl;
+    cout << "Heap Sorting Copy Count: " << statistics6.copy_count << endl << endl;
+    return 0;
 
 
 }
