@@ -218,6 +218,7 @@ int main() {
     for (const auto& obj : v1) {
         cout << obj.get_value() << " ";
     }
+    cout << endl;
     cout << "Bubble Sorting Comparison Count: " << statistics4.comparison_count << endl;
     cout << "Bubble Sorting Copy Count: " << statistics4.copy_count << endl << endl;
 
@@ -233,6 +234,7 @@ int main() {
     for (const auto& obj : v2) {
         cout << obj.get_value() << " ";
     }
+    cout << endl;
     cout << "Shell Sorting Comparison Count: " << statistics5.comparison_count << endl;
     cout << "Shell Sorting Copy Count: " << statistics5.copy_count << endl << endl;
 
@@ -248,6 +250,7 @@ int main() {
     for (const auto& obj : v3) {
         cout << obj.get_value() << " ";
     }
+    cout << endl;
     cout << "Heap Sorting Comparison Count: " << statistics6.comparison_count << endl;
     cout << "Heap Sorting Copy Count: " << statistics6.copy_count << endl << endl;
     return 0;

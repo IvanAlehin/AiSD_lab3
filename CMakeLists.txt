@@ -21,4 +21,5 @@ add_library(Sort STATIC "Sort/Sort.cpp")
 target_include_directories(Sort PUBLIC "Sort")
 
 add_executable (${PROJECT_NAME} "main.cpp")
+target_link_libraries(${PROJECT_NAME} Sort)
 
